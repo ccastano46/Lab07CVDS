@@ -38,6 +38,7 @@ public class Lab7Application {
 	@Bean
 	public CommandLineRunner run() {
 		return (args) -> {
+			/*
 			log.info("Adding Configurations....");
 			configurationService.addConfiguration(new Configuration("premio", "810000"));
 			configurationService.addConfiguration(new Configuration("descuento", "0.1"));
@@ -48,6 +49,7 @@ public class Lab7Application {
 
 			log.info("\nAdding admin@site.org user with Password: admin");
 			userRepository.save(new User("admin@site.org", "admin", Arrays.asList(UserRole.ADMINISTRADOR, UserRole.CLIENTE)));
+		*/
 		};
 	}
 
