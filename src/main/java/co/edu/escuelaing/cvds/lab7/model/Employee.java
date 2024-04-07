@@ -87,13 +87,14 @@ public class Employee {
 
     @Override
     public boolean equals(Object obj) {
-       try {
+    	boolean bandera = false;
+    	try {
     	   Employee objeto = (Employee) obj;
     	   if(id.equals(objeto.getId()) && firstName.equals(objeto.getFirstName()) && lastName.equals(objeto.getLastName())
-    			   && role.equals(objeto.getRole()) && salary == objeto.getSalary()) return true;
-    	   else return false;
+    			   && role.equals(objeto.getRole()) && salary == objeto.getSalary()) bandera = true;
+    	   return bandera;
        }catch(Exception e) {
-    	   return false;
+    	   return bandera;
        }
     }
 

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:replace="fragments/general.html::headerfiles('Example Page')"></th:block>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+	<h1>EMPLOYEES LIST</h1>
+	<ul>
+	        <li th:each="employee : ${trabajadores}">
+	            <p>ID: <span th:text="${employee.id}"></span></p>
+	            <p>First Name: <span th:text="${employee.firstName}"></span></p>
+	            <p>Last Name: <span th:text="${employee.lastName}"></span></p>
+	            <p>Role: <span th:text="${employee.role}"></span></p>
+	            <p>Salary: <span th:text="${employee.Salary}"></span></p>
+	        </li>
+	    </ul>
+</body>
+</html>
