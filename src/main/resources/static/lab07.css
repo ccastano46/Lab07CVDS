@@ -141,6 +141,39 @@ div {
 /*PC-First*/
 
 
-li{
-	display: inline-block;
+body {
+    padding: 20px;
+    background-color: #C5E0DC;
 }
+
+
+th, td{
+    padding: 10px;
+    text-align: center;
+    padding-bottom: 15px;
+    
+    border-bottom: 2px solid black; ;
+}
+
+th{
+    border-top: 2px solid black; 
+}
+
+
+
+
+
+tr:nth-child(odd){
+    background-color: #3B8183;
+}
+
+tr:nth-child(even){
+    background-color: #FAD089;
+}
+
+
+
+h1{
+    margin-bottom: 20px;
+}
+

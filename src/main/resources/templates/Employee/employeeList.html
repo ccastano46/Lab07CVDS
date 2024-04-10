@@ -3,26 +3,29 @@
 <th:block th:replace="fragments/general.html::headerfiles('Employee List')"></th:block>
 <head>
     <meta charset="UTF-8">
-     <link rel="stylesheet" href="../lab07.css">
     <title>Employee List</title>
+      <link rel="stylesheet" href="../lab07.css">
 </head>
 <body>
 	<h1>EMPLOYEES LIST</h1>
-	<ul>
-	<li>ID</li>
-	<li>First Name</li>
-	<li>Last Name</li>
-	<li>Role</li>
-	<li>Salary</li>
-	</ul>
-	<ul th:each="employee : ${trabajadores}">
-	        <li>
-	            <p>ID: <span th:text="${employee.id}"></span></p>
-	            <p>First Name: <span th:text="${employee.firstName}"></span></p>
-	            <p>Last Name: <span th:text="${employee.lastName}"></span></p>
-	            <p>Role: <span th:text="${employee.role}"></span></p>
-	            <p>Salary: <span th:text="${employee.Salary}"></span></p>
-	        </li>
-	    </ul>
+	<table>
+		<tr class="primeraFila">
+			<th class="primeraColumna">ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Role</th>
+			<th>Salary</th>
+		</tr>
+		<tr th:each="employee : ${trabajadores}">
+			<td th:text="${employee.id}" class="primeraColumna"></td>
+			<td th:text="${employee.firstName}"></td>
+			<td th:text="${employee.lastName}"></td>
+			<td th:text="${employee.role}"></td>
+			<td th:text="${employee.Salary}"></td>
+		</tr>
+
+
+	</table>
+	
 </body>
 </html>

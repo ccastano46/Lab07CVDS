@@ -43,7 +43,8 @@ public class Lab7Application {
 	public CommandLineRunner run() {
 		return (args) -> {
 			employeeService.addEmployee(new Employee("1","Camilo","Castaño","SCRUM MASTER",10000000));
-			employeeService.addEmployee(new Employee("2","Josue","Hernandez","Administrador",5000000));
+			employeeService.addEmployee(new Employee("2","Josue","Hernandez","Back-end",4000000));
+			employeeService.addEmployee(new Employee("3","Saray","Gonzales","Front-End",5000000.50));
 			/*
 			log.info("\nGetting all configurations....");
 			configurationService.getAllConfigurations().forEach(configuration -> System.out.println(configuration));
