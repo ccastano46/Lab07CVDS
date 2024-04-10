@@ -29,4 +29,21 @@ public class EmployeeController {
         model.addAttribute("trabajadores", employees); 
         return "Employee/employeeList";  
     }
+    @PostMapping("/add")
+    public String addEmployee(@ModelAttribute Employee employee) {
+        employeeService.addEmployee(employee);
+        return "redirect:/employee/list";
+    }
+    @PostMapping("/update/{id}")
+    public String updateEmployee(@PathVariable String id, @ModelAttribute Employee employee) {
+        employeeService.updateEmployee(id, employee);
+        return "redirect:/employee/list";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable String id) {
+        employeeService.deleteEmployee(id);
+        return "redirect:/employee/list";
+    }
 }
+
+

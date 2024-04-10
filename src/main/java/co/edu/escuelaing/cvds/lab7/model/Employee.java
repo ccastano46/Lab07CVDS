@@ -51,7 +51,7 @@ public class Employee {
         return lastName;
     }
 
-    public void setlastName(String newLastName) {
+    public void setLastName(String newLastName) {
         this.lastName = newLastName;
     }
     
@@ -103,4 +103,5 @@ public class Employee {
         return "Employee[ID = " + id + ", First Name = " + firstName + ", Last Name = " + lastName 
         		+ ", Role = " + role + ", Saraly = " + salary + "]";
     }
+
 }
