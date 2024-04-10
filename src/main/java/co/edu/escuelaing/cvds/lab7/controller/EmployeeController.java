@@ -1,8 +1,8 @@
 package co.edu.escuelaing.cvds.lab7.controller;
 
-import co.edu.escuelaing.cvds.lab7.model.Configuration;
+
 import co.edu.escuelaing.cvds.lab7.model.Employee;
-import co.edu.escuelaing.cvds.lab7.service.ConfigurationService;
+
 import co.edu.escuelaing.cvds.lab7.service.EmployeeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +23,10 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/employeeList")
+    @GetMapping("/list")
     public String employees(Model model) {
         List<Employee> employees = employeeService.getEmployees();
         model.addAttribute("trabajadores", employees); 
-        return "employeeList";  
+        return "Employee/employeeList";  
     }
-
-   
-    
 }

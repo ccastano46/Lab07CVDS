@@ -1,14 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<th:block th:replace="fragments/general.html::headerfiles('Example Page')"></th:block>
+<th:block th:replace="fragments/general.html::headerfiles('Employee List')"></th:block>
 <head>
     <meta charset="UTF-8">
+     <link rel="stylesheet" href="../lab07.css">
     <title>Employee List</title>
 </head>
 <body>
 	<h1>EMPLOYEES LIST</h1>
 	<ul>
-	        <li th:each="employee : ${trabajadores}">
+	<li>ID</li>
+	<li>First Name</li>
+	<li>Last Name</li>
+	<li>Role</li>
+	<li>Salary</li>
+	</ul>
+	<ul th:each="employee : ${trabajadores}">
+	        <li>
 	            <p>ID: <span th:text="${employee.id}"></span></p>
 	            <p>First Name: <span th:text="${employee.firstName}"></span></p>
 	            <p>Last Name: <span th:text="${employee.lastName}"></span></p>
