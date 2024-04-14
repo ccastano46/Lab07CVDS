@@ -40,13 +40,21 @@ public class EmployeeController {
     	employeeService.addEmployee(new Employee(id,firstName,lastName,role,salary));
     	return "redirect:/employee/list";
     }
-    @PostMapping("/update/{id}")
-    public String updateEmployee(@PathVariable String id, @ModelAttribute Employee employee) {
-        employeeService.updateEmployee(id, employee);
-        return "redirect:/employee/list";
+    @GetMapping("/update")
+    public String updateEmployee(Model model,@RequestParam("ID") String id ) {
+        model.addAttribute("trabajador",employeeService.findEmployee(id));
+        return "Employee/updateEmployee";
     }
-    @GetMapping("/delete/{id}")
-    public String deleteEmployee(@PathVariable String id) {
+    
+    @PostMapping("/procesarActualizado")
+    public String procesarActualizacion(@RequestParam("ID") String id, @RequestParam("FirstName") String firstName,
+    		@RequestParam("LastName") String lastName, @RequestParam("Role") String role, @RequestParam("Salary") double salary) {
+    	employeeService.updateEmployee(id, new Employee(null,firstName,lastName,role,salary));
+    	return "redirect:/employee/list";
+    }
+    
+    @GetMapping("/delete")
+    public String deleteEmployee(@RequestParam("ID") String id) {
         employeeService.deleteEmployee(id);
         return "redirect:/employee/list";
     }

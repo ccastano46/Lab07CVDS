@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:replace="fragments/general.html::headerfiles('Employee List')"></th:block>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Update</title>
+      <link rel="stylesheet" href="../lab07.css">
+</head>
+<body>
+	<h1>UPDATE EMPLOYEE: <span th:text="${trabajador.id}"></span></h1>
+	
+		<form action="/employee/procesarActualizado" method="post">
+            <input type="text" th:value="${trabajador.id}" id="ID" name="ID" class="IDActualizar">
+            <div>
+                <label for="FirstName">First Name:</label>
+                <input type="text" th:value="${trabajador.firstName}" id="FirstName" name="FirstName" maxlength="30">
+            </div>
+    
+            <div>
+                <label for="LastName">Last Name:</label>
+                <input type="text" th:value="${trabajador.lastName}" id="LastName" name="LastName" maxlength="30">
+            </div>
+            
+            <div>
+                <label for="Role">Role:</label>
+                <input type="text" th:value="${trabajador.role}" id="Role" name="Role" maxlength="30">
+            </div>
+    
+            <div class="ultimaFila">
+                <label for="Salary">Salary:</label>
+                <input type="number" step="0.001" th:value="${trabajador.Salary}" id="Salary" name="Salary">
+            </div>
+    
+            <input type="submit" value="Actualizar">
+        </form>
+
+</body>
+</html>

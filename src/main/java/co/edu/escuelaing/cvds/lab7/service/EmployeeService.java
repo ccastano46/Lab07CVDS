@@ -23,18 +23,22 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
     
+    public Employee findEmployee(String id) {
+    	return employeeRepository.getReferenceById(id);
+    }
+    
     
     public Employee addEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
    
-    public Employee updateEmployee(String id, Employee employee) {
-        Employee existingEmployee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Empleado no encontrado"));
-        existingEmployee.setFirstName(employee.getFirstName());
-        existingEmployee.setLastName(employee.getLastName());
-        existingEmployee.setRole(employee.getRole());
-        existingEmployee.setSalary(employee.getSalary());
+    public Employee updateEmployee(String id,Employee newEmployee) {
+    	Employee existingEmployee= this.findEmployee(id);
+        existingEmployee.setFirstName(newEmployee.getFirstName());
+        existingEmployee.setLastName(newEmployee.getLastName());
+        existingEmployee.setRole(newEmployee.getRole());
+        existingEmployee.setSalary(newEmployee.getSalary());
         return employeeRepository.save(existingEmployee);
     }
 

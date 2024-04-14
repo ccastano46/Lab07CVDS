@@ -177,6 +177,10 @@ h1{
     margin-bottom: 20px;
 }
 
+h1 span{
+    color: purple;
+}
+
 
 
 form div{
@@ -197,5 +201,9 @@ form div input{
 
 div.ultimaFila{
     margin-bottom: 20px;
+}
+
+input.IDActualizar{
+    display: none;
 }
 
