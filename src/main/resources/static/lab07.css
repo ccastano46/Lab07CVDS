@@ -177,3 +177,25 @@ h1{
     margin-bottom: 20px;
 }
 
+
+
+form div{
+    display: table-row;
+}
+
+form div label,
+    form div input {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 5px;
+    }
+
+
+form div input{
+    padding: 0;
+}
+
+div.ultimaFila{
+    margin-bottom: 20px;
+}
+

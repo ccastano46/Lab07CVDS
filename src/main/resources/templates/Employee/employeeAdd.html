@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:replace="fragments/general.html::headerfiles('Employee List')"></th:block>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+      <link rel="stylesheet" href="../lab07.css">
+</head>
+<body>
+	<h1>EMPLOYEES ADD</h1>
+	<form action="/employee/procesarNuevo" method="post">
+        <div>
+            <label for="ID">ID Employee:</label>
+            <input type="text" placeholder="ID Employee" id="ID" name="ID" maxlength="3" required>
+        </div>
+        
+        <div>
+            <label for="FirstName">First Name:</label>
+            <input type="text" placeholder="Employee First Name" id="FirstName" name="FirstName" maxlength="30" required>
+        </div>
+
+        <div>
+            <label for="LastName">Last Name:</label>
+            <input type="text" placeholder="Employee Last Name" id="LastName" name="LastName" maxlength="30" required>
+        </div>
+        
+        <div>
+            <label for="Role">Role:</label>
+            <input type="text" placeholder="Employee Role" id="Role" name="Role" maxlength="30" required>
+        </div>
+
+        <div class="ultimaFila">
+            <label for="Salary">Salary:</label>
+            <input type="number" step="0.001" placeholder="Employee Salary" id="Salary" name="Salary" required>
+        </div>
+
+        <input type="submit" value="Guardar">
+    </form>
+
+   
+   
+</body>
+</html>

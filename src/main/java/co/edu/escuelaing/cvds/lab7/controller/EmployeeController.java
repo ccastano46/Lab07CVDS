@@ -29,10 +29,16 @@ public class EmployeeController {
         model.addAttribute("trabajadores", employees); 
         return "Employee/employeeList";  
     }
-    @PostMapping("/add")
-    public String addEmployee(@ModelAttribute Employee employee) {
-        employeeService.addEmployee(employee);
-        return "redirect:/employee/list";
+    @GetMapping("/add")
+    public String addEmployee() {
+        return "Employee/employeeAdd";
+    }
+    
+    @PostMapping("/procesarNuevo")
+    public String procesarFormulario(@RequestParam("ID") String id, @RequestParam("FirstName") String firstName,
+    		@RequestParam("LastName") String lastName, @RequestParam("Role") String role, @RequestParam("Salary") double salary) {
+    	employeeService.addEmployee(new Employee(id,firstName,lastName,role,salary));
+    	return "redirect:/employee/list";
     }
     @PostMapping("/update/{id}")
     public String updateEmployee(@PathVariable String id, @ModelAttribute Employee employee) {
