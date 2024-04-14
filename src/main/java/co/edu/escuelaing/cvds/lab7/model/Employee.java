@@ -67,8 +67,8 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(String newSalary) {
-        this.firstName = newSalary;
+    public void setSalary(double newSalary) {
+        this.salary = newSalary;
     }
     
 

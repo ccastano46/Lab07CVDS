@@ -34,7 +34,7 @@ public class EmployeeService {
         existingEmployee.setFirstName(employee.getFirstName());
         existingEmployee.setLastName(employee.getLastName());
         existingEmployee.setRole(employee.getRole());
-        //existingEmployee.setSalary(employee.getSalary());
+        existingEmployee.setSalary(employee.getSalary());
         return employeeRepository.save(existingEmployee);
     }
 
